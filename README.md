@@ -1,6 +1,4 @@
-# exercices-js-b2
-
-# B2 - Pour préparer le cours et le petit quiz de mercredi 16
+# Pour préparer le cours et le petit quiz de mercredi 16
 
 # Modalités d’évaluation du module Frameworks JS:
 
