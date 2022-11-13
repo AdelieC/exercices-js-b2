@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style type="text/tailwindcss">
+			@layer base {
+				body {
+					@apply bg-fixed;
+				}
+				main {
+					@apply flex flex-col gap-8 xl:gap-10 justify-center items-center p-8;
+				}
+				h1 {
+					@apply text-3xl font-extrabold md:text-4xl text-center;
+				}
+				h2 {
+					@apply text-2xl md:text-3xl font-bold;
+				}
+				h3 {
+					@apply text-xl font-bold;
+				}
+				a {
+					@apply text-sky-500;
+				}
+				ul {
+					@apply list-disc list-inside;
+				}
+				code {
+					@apply bg-slate-200 rounded-md py-1 px-2 inline-block text-xs;
+				}
+				button {
+					@apply rounded-lg bg-sky-400 px-3 py-2 shadow-md hover:bg-sky-600 text-white transition;
+				}
+				aside {
+					@apply text-xs italic;
+				}
+				blockquote {
+					@apply border border-sky-500 p-4 text-center rounded-lg;
+				}
+			}
+
+			@layer components {
+				.card {
+					@apply bg-white shadow-md p-8 gap-8 w-full max-w-3xl flex flex-col rounded-xl;
+				}
+				.playground {
+					@apply border border-emerald-300 p-4 rounded-lg;
+				}
+				.modal {
+					@apply z-50 w-screen h-screen fixed top-0 left-0 bg-black bg-opacity-30 flex justify-center items-center p-12;
+					display: none;
+				}
+				.modal-inner {
+					@apply card;
+				}
+				#change-background {
+					@apply bg-cover bg-center;
+				}
+				#jokes-list li {
+					@apply border-b border-b-sky-200 p-4 flex flex-col gap-2;
+				}
+				#jokes-list span:first-child {
+					@apply font-bold;
+				}
+			}
+		</style>
+		<title>Exercices JS pour mes B2</title>
+	</head>
+	<body class="bg-sky-50">
+		<main class=" ">
+			<header class="card">
+				<h1 class="text-xl md:text-4xl text-center">
+					Exercices JS pour mes B2
+				</h1>
+				<blockquote class="">
+					Pour travailler sur ces exercices, vous devez
+					<b>forker</b> ce pen en cliquant sur le bouton "Fork" en bas
+					à droite - si vous avez un compte code pen pour sauvegarder
+					ce que vous faites, c'est mieux!
+				</blockquote>
+				<aside>
+					Vous pouvez aussi c/c le code dans votre IDE et travailler
+					en local comme vous aviez fait en cours (pour conserver le
+					style, vous aurez besoin d'utiliser le cdn
+					<a
+						href="https://tailwindcss.com/docs/installation/play-cdn"
+						target="_blank"
+					>
+						tailwindcss</a
+					>)
+				</aside>
+				<p>
+					Vous trouverez ici 7 exercices de révision JavaScript. Ils
+					vont du plus simple au moins simple (ceux qui s'ennuient
+					passent à la suite s'ils le veulent). Vous pouvez tous les
+					réaliser, avec plus ou moins d'efforts. Je vais vous
+					demander d'en choisir au moins 3. Essayez
+					<em>pour de vrai</em> avant de regarder la solution...
+				</p>
+				<p>
+					Surtout, n'éditez <em>pas</em> l'HTML ni le CSS de ce pen!
+					Seul l'éditeur JavaScript nous intéresse ici : passez de
+					cadre en cadre pour réaliser les exercices en complétant le
+					javascript aux endroits indiqués dans l'éditeur.
+				</p>
+				<p class="text-2xl text-center"><em>Bon code à tous!</em></p>
+			</header>
+
+			<div class="card">
+				<h2>1. Ajoutez un fond au document</h2>
+				<p>
+					Ce fond manque de fantaisie, non? Choisissez une image sur
+					<a target="_blank" href="https://picsum.photos/">ce site</a>
+					et placez-là en image de fond du document (utilisez le tag
+					html <code>"body"</code>).
+				</p>
+			</div>
+
+			<div class="card">
+				<h2>2. Trouvez un élément par son id et transformez-le</h2>
+				<p>
+					Sur la div <code>#text-to-change</code> qui se trouve dans
+					ce cadre :
+				</p>
+				<ul>
+					<li>
+						Changez la couleur du <em>texte</em> en
+						<code>cornflowerblue</code> (pour voir toutes les
+						couleurs nommées, c'est
+						<a
+							target="_blank"
+							href="https://www.w3.org/wiki/CSS/Properties/color/keywords"
+							>ici</a
+						>)
+					</li>
+					<li>Changez la taille du texte en <code>2rem</code></li>
+					<li>
+						Changez le contenu de la div en :
+						<code
+							>Codez toujours comme si la personne qui allait
+							maintenir votre code était un &lt;em&gt;violent
+							psychopathe&lt;/em&gt; qui sait où vous
+							habitez.</code
+						>
+					</li>
+				</ul>
+				<p id="text-to-change" class="playground">
+					Voilà le texte qui devra être transformé...
+				</p>
+			</div>
+
+			<div class="card">
+				<h2>
+					3. Utiliser une classe pour changer l'apparence de plusieurs
+					éléments en même temps
+				</h2>
+				<p>
+					Récupérez tous les éléments ayant la classe
+					<code>make-coral</code>, et utilisez une boucle pour changer
+					la couleur de leur texte en <code>coral</code>.
+				</p>
+				<aside>
+					TIP : si vous avez fait l'exercice 2, vous pouvez réutiliser
+					la fonction <code>changeTextColor</code> ;-)
+				</aside>
+				<ul>
+					<li class="make-coral">Bientôt,</li>
+					<li class="make-coral">on va devenir</li>
+					<li class="make-coral">CORAIL</li>
+				</ul>
+			</div>
+
+			<div class="card">
+				<h2>4. Afficher une modale quand on clique sur un bouton</h2>
+				<p>
+					À la fin de ce cadre, vous trouverez un bouton avec l'id
+					<code>#open-modal</code>, et une modale (avec l'id
+					<code>#modal</code>) qui contient un bouton avec l'id
+					<code>#close-modal</code>.
+				</p>
+				<p>
+					Récupérez les éléments correspondant à partir de leurs id.
+					Créez ensuite des listener de l'évenement
+					<code>click</code> &mdash; pour chaque bouton :
+				</p>
+				<ul>
+					<li>
+						Quand on clique sur le bouton <code>#open-modal</code>,
+						la modale doit s'afficher en manipulant sa propriété de
+						style <code>display</code> (qui est égale à
+						<code>none</code> par défaut dans le css).
+					</li>
+					<li>
+						Lorsqu'on clique sur le button
+						<code>#close-modal</code>, utilisez la même propriété
+						pour cacher à nouveau la modale.
+					</li>
+				</ul>
+
+				<aside>
+					Bonus : pour aller plus loin, faites en sorte que la modale
+					se ferme quand on clique en dehors (sur le fond)
+				</aside>
+
+				<p class="center">
+					<button id="open-modal">Ouvrir la modale !</button>
+				</p>
+				<div id="modal" class="modal">
+					<div class="modal-inner">
+						<h2>Bravo !</h2>
+						<p>
+							Vous avez réussi à m'ouvrir :). Maintenant
+							fermez-moi!
+						</p>
+						<button id="close-modal">Fermer la modale</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2>
+					5. Utiliser la valeur sélectionnée par l'utilisateur pour
+					changer l'apparence d'un élément
+				</h2>
+				<p>
+					Mettez en place un listener sur l'évènement
+					<code>change</code> du sélecteur ci-dessous. Quand la valeur
+					sélectionnée change, récupérez-là à partir de la cible
+					(<code>target</code>) de l'event, et servez-vous en pour
+					changer le fond de la div <code>#change-background</code>.
+				</p>
+				<aside>
+					TIP : si vous avez fait l'exercice 1, vous pouvez réutiliser
+					la fonction <code>changeBackgroundImage</code> ;-)
+				</aside>
+
+				<p class="center">
+					<label for="texture-selector"
+						>Choisissez une image de fond :</label
+					>
+					<select id="background-selector">
+						<option
+							value="https://upload.wikimedia.org/wikipedia/commons/4/48/BLANK_ICON.png"
+						>
+							&mdash;
+						</option>
+						<option
+							value="https://img.freepik.com/photos-gratuite/cinq-petits-chatons-gris-se-trouvent-tapis-rose_8353-7262.jpg?w=1380&t=st=1668281083~exp=1668281683~hmac=025be405068c2e3e14e6760b541b4c8dfa94be9f50357ed5084207187600b6ce"
+						>
+							Chatons
+						</option>
+						<option
+							value="https://img.freepik.com/photos-gratuite/gros-plan-adorable-petit-chiot-golden-retriever-allonge-tapis-violet-jouet-bleu_181624-32890.jpg?w=1380&t=st=1668281168~exp=1668281768~hmac=6d4649bca98e063891a3c76334e013d7786189f5c0d4cff88bfc1f2aea889bfb"
+						>
+							Chiot
+						</option>
+						<option
+							value="https://img.freepik.com/photos-gratuite/vue-panoramique-trois-pingouins-pierres-antarctique_181624-27617.jpg?w=1380&t=st=1668281246~exp=1668281846~hmac=9c39c50d1e5d7279616eeb260a21d7f5ef04ded569a8326d1a9443bfa8d717e2"
+						>
+							Manchots
+						</option>
+						<option
+							value="https://img.freepik.com/photos-gratuite/porcelet-nouveau-ne-herbe-verte-printemps_167946-97.jpg?w=1380&t=st=1668281334~exp=1668281934~hmac=c9c9b246ce67db4adc2849c0e892d67f5d0ef37a37e99d30f8de1b5cb2720e55"
+						>
+							Cochon
+						</option>
+						<option
+							value="https://img.freepik.com/photos-gratuite/rhacophorus-dulitensis-gros-plan-feuilles-vertes_488145-1541.jpg?w=1380&t=st=1668281512~exp=1668282112~hmac=b8c2ef86710fd92a6d4a6da6d4f38f409c253104d5c7a70dd03119463a5c1361"
+						>
+							Grenouille
+						</option>
+					</select>
+				</p>
+
+				<div
+					id="change-background"
+					class="playground w-full h-72"
+				></div>
+			</div>
+			<div class="card">
+				<h2>6. Afficher une ToDo list à partir d'un tableau</h2>
+				<p>
+					Vous trouverez dans l'éditeur JS, dans la section 6, un
+					tableau prérempli de tâches à ajouter à la todo list dont
+					l'id est <code>#to-do-list</code>. Récupérez d'abord
+					l'élément parent à l'aide de son id, puis remplissez-le à
+					l'aide d'une boucle avec des éléments <code>li</code> qui
+					afficheront chacune des valeurs du tableau.
+				</p>
+				<div class="playground">
+					<h3>Ma TODO list</h3>
+					<ul id="to-do-list">
+						<p>Pas encore de tâche à effectuer...</p>
+					</ul>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2>
+					7. Afficher une liste de blagues douteuses depuis une API
+					externe
+				</h2>
+				<p>
+					Comme précédemment, récupérez l'élément <code>ul</code> dont
+					l'id est <code>#jokes-list</code>. Remplissez-le ensuite
+					d'élements <code>li</code> à l'aide d'une boucle pour
+					afficher les valeurs que vous aurez récupérées de l'api.
+				</p>
+				<blockquote>
+					On va utiliser l'api dont l'url est
+					<code
+						>https://v2.jokeapi.dev/joke/Any?lang=fr&amount=:amount</code
+					>
+				</blockquote>
+				<p>
+					Vous trouverez sa doc
+					<a href="https://v2.jokeapi.dev/" target="_blank">ici</a>.
+					Remplacez <code>:amount</code> par le nombre de blagues que
+					vous souhaitez récupérer.
+				</p>
+				<p>
+					Comme on l'a fait en cours, effectuez une requête
+					<code>GET</code> sur l'url correspondant au personnage dont
+					vous voulez afficher les citations. Vous pouvez pour ça
+					utiliser la syntaxe
+					<a
+						href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Promises#async_et_await"
+						><code>async/await</code></a
+					>
+					ou bien
+					<a
+						href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Promises#encha%C3%AEner_les_promesses"
+						><code>then</code></a
+					>
+					pour enchaîner les promesses. N'hésitez pas à tester des
+					enchaînements et à logger vos résultats à différents
+					endroits dans la console pour bien comprendre ce qu'il se
+					passe dans votre code.
+				</p>
+				<div>
+					La réponse aura ce format ci :
+                    <pre><code>{
+                            "error": false,
+                            "amount": 10,
+                            "jokes": [
+                                {
+                                    "category": "Misc",
+                                    "type": "twopart",
+                                    "setup": "Pourquoi les canards (...)",
+                                    "delivery": "Parce qu'ils sont (...)",
+                                    "flags": {
+                                        "nsfw": false,
+                                        "religious": false,
+                                        "political": false,
+                                        "racist": false,
+                                        "sexist": false,
+                                        "explicit": false
+                                    },
+                                    "safe": true,
+                                    "id": 16,
+                                    "lang": "fr"
+                                },
+                                {
+                                    "category": "Misc",
+                                    "type": "twopart",
+                                    "setup": "À quel moment la poule (...)",
+                                    "delivery": "Quand elle passe du (...)",
+                                    "flags": {
+                                        "nsfw": false,
+                                        "religious": false,
+                                        "political": false,
+                                        "racist": false,
+                                        "sexist": false,
+                                        "explicit": false
+                                    },
+                                    "safe": true,
+                                    "id": 115,
+                                    "lang": "fr"
+                                }
+                            ]
+                        }</code></pre>
+				</div>
+				<blockquote>
+					<p>
+						Le tableau sur lequel effectuer une boucle est
+						<code>jokes</code>
+					</p>
+					<p>
+						Les clés qui nous intéressent ici sont
+						<code>setup</code> et <code>delivery</code> : il faudra
+						donc mettre dans deux balises <code>span</code> les
+						valeurs de <code>jokes[index].setup</code> et
+						<code>jokes[index].delivery</code>
+					</p>
+				</blockquote>
+				<div class="playground">
+					<h3>Blagues niveau master carambar :</h3>
+					<ul id="jokes-list">
+						<p>Pas encore de blague à afficher...</p>
+					</ul>
+				</div>
+			</div>
+		</main>
+        <!-- <script src="correction.js"></script> -->
+        <script src="exercice.js"></script>
+	</body>
+</html>
